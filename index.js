@@ -210,6 +210,7 @@ async function importReadme() {
         name: 'path',
         type: 'input',
         message: 'What is the path of the readme file?\n',
+        default: data.lastSavedPath,
         validate: input => /.+(.md)$/.test(input) || input == ''
     }])
 
