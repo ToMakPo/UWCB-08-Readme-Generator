@@ -1,4 +1,5 @@
-// function to generate markdown for README
+const metadata = require('./metadata')
+
 const format = {
     goal: value => value,
     tasks: value => value.map(task => task.replace('^([>]*)(.*)$', '$1- $2')).join('\n'),
@@ -12,16 +13,17 @@ const format = {
         } else return line
     }).join('\n'),
     contributors: value => ['<div style="display:flex; flex-wrap:wrap">',
-        ...value.map(c => {
+        ...value.map(name => {
+            const { image, phone, email, profiles } = metadata.getTeamMember(name)
             let card = []
                             card.push(`    <span style="display:flex; flex-wrap:wrap; background:#333; padding:10px; border-radius:10px; margin:5px; flex-grow: 1">`)
                             card.push(`        <span style="display:flex; flex-direction: column">`)
-                            card.push(`            <h2>${c.name}</h2>`)
-            if (c.image)    card.push(`            <img src='${c.image}' style="width:120px; height:120px; object-fit:cover; margin-right:10px; border-radius: 5px">`)
-            if (c.phone)    card.push(`            <a href="tel:+1${c.phone}" target="_blank" style="font-size:10px">${c.phone.replace(/(\d{3})(\d{3})(\d{4})/, '($1) $2-$3')}</a>`)
-            if (c.email)    card.push(`            <a href="mailto:${c.email}" target="_blank" style="font-size:10px">${c.email}</a>`)
-            for (const p of c.profiles)
-                            card.push(`            <a href="${p.url}" target="_blank" style="font-size:10px">${p.text}</a>`)
+                            card.push(`            <h2>${name}</h2>`)
+            if (c.image)    card.push(`            <img src='${image}' style="width:120px; height:120px; object-fit:cover; margin-right:10px; border-radius: 5px">`)
+            if (c.phone)    card.push(`            <a href="tel:+1${phone}" target="_blank" style="font-size:10px">${phone.replace(/(\d{3})(\d{3})(\d{4})/, '($1) $2-$3')}</a>`)
+            if (c.email)    card.push(`            <a href="mailto:${email}" target="_blank" style="font-size:10px">${email}</a>`)
+            for (const { text, url } of profiles)
+                            card.push(`            <a href="${url}" target="_blank" style="font-size:10px">${text}</a>`)
                             card.push(`        </span>`)
                             card.push(`    </span>`)
             return card.join('\n')
