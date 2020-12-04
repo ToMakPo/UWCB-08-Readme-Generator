@@ -20,6 +20,7 @@ const Data = function(data) {
         save()
         return member
     }
+    this.getTeamMember = name => team[name]
     this.newProfile = (text, url) => { return {text, url} }
     this.removeTeamMember = name => {
         delete team[name]
