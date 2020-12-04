@@ -49,8 +49,7 @@ function generateMarkdown(data, includeMetadata=true) {
     
     const {title, description} = data
     let document = ''
-    if (includeMetadata) document += `<!-- Created by Makai's Readme Generator -->\n`
-    if (includeMetadata) document += `<!-- v${versionNumber} -->\n`
+    if (includeMetadata) document += `<!-- Created by Makai's Readme Generator (v${versionNumber}) -->\n`
     if (title) document += `# ${title}\n`
     if (description) document += `${description}\n`
     include('goal', '🎯')
