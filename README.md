@@ -44,21 +44,5 @@ If you choose to edit an existing readme, you will be prompted to provide the pa
 Once you are done with everything and it looks good, you will be prompted to provide a file path to save the readme file. You only need to provide the path, but not the file name. It will name the file `README` plus the appropriate file extention. If a readme file already exists in that location, then it will be overwritten.
 
 ---
-## 👾 CONTRIBUTORS
-<div style='display:flex; flex-wrap:wrap'>
-    <span style='display:flex; flex-wrap:wrap; background:#333; padding:5px; border-radius:10px; margin:5px; flex-grow: 1; min-width:calc(50% - 20px)'>
-        <img src='https://ca.slack-edge.com/T01ASRJ804E-U01AT4AMG3Y-4162ffc1d2f9-512' style='width:120px; height:120px; object-fit:cover; margin-right:10px; border-radius: 5px'>
-        <span style='display:flex; flex-direction: column'>
-            <h2>Makai Post</h2>
-            <a href='tel:+12067450402' target='_blank' style='font-size:10px'>(206) 745-0402</a>
-            <a href='mailto:post.makai@gmail.com' target='_blank' style='font-size:10px'>post.makai@gmail.com</a>
-            <a href='https://tomakpo.github.io/UWCB-08-Professional_Materials/' target='_blank' style='font-size:10px'>Portfolio</a>
-            <a href='https://github.com/ToMakPo' target='_blank' style='font-size:10px'>GitHub</a>
-            <a href='https://www.linkedin.com/in/makaipost/' target='_blank' style='font-size:10px'>LinkedIn</a>
-        </span>
-    </span>
-</div>
-
----
 ## 🏆 ATTRIBUTIONS
 [Google Fonts](https://fonts.google.com/) - Used in the linked css for the generated HTML readme files.
